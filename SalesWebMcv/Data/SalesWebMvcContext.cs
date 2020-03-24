@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SalesWebMcv.Models;
 using SalesWebMvc.Models;
 
-namespace SalesWebMcv.Data
+
+namespace SalesWebMvc.Data
 {
     public class SalesWebMvcContext : DbContext
     {

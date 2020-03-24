@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using SalesWebMcv.Data;
+using SalesWebMvc.Data;
 
-namespace SalesWebMcv
+
+namespace SalesWebMvc
 {
     public class Startup
     {
@@ -39,6 +40,9 @@ namespace SalesWebMcv
             services.AddDbContext<SalesWebMvcContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("SalesWebMvcContext"), builder => 
                     builder.MigrationsAssembly("SalesWebMvc")));
+
+            services.AddScoped<SeedingService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
